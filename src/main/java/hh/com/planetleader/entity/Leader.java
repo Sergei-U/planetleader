@@ -2,8 +2,8 @@ package hh.com.planetleader.entity;
 
 import lombok.Data;
 
-
 import javax.persistence.*;
+import java.util.Comparator;
 
 /**
  *
@@ -24,5 +24,7 @@ public class Leader {
 
     @Column(name = "LEADERAGE")
     private int leaderAge;
+
+
 
 }

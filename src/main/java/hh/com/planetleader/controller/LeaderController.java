@@ -25,4 +25,7 @@ public class LeaderController {
     public void editLeader(@RequestBody Leader leader) {this.leaderService.editLeader(leader);}
     @RequestMapping(value = "/findleader", method = RequestMethod.POST)
     public void findLeader(@RequestBody Leader leader) {this.leaderService.findLeaderByName(leader);}
+
+    @RequestMapping(value = "/leaderagesort", method = RequestMethod.POST)
+    public void leaderAgeSrot(@RequestBody Leader leader) {this.leaderService.getFirstTenYoungerLeader(leader);}
 }

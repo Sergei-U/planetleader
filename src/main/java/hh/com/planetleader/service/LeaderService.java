@@ -1,12 +1,12 @@
 package hh.com.planetleader.service;
 
 import hh.com.planetleader.entity.Leader;
+import hh.com.planetleader.entity.LeaderAgeComparator;
 import hh.com.planetleader.repository.LeaderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -40,8 +40,9 @@ public class LeaderService {
         return leader1;
     }
 
-    public List<Leader> getFirstTenYoungerLeader(Long a) {
+    public List<Leader> getFirstTenYoungerLeader(Leader a) {
         List<Leader> leaders = leaderRepository.findAll();
-        return leaders.stream().filter(age -> age.getLeaderAge()).collect(Collectors.toList());
+
+        return leaders.stream().limit(10).sorted(new LeaderAgeComparator()).collect(Collectors.toList());
     }
 }
