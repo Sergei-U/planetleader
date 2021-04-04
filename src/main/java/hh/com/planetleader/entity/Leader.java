@@ -18,8 +18,10 @@ public class Leader {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private long id;
+
     @Column(name = "NAME")
     private String name;
+
     @Column(name = "LASTNAME")
     private String lastName;
 
@@ -28,7 +30,6 @@ public class Leader {
 
     @OneToMany(targetEntity = Planet.class)
     private List<Planet> planetList;
-
 
 
 }

@@ -21,39 +21,6 @@ public class PlanetleaderApplication {
 
         SpringApplication.run(PlanetleaderApplication.class, args);
 
-        SessionFactory sessionFactory = null;
 
-        final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
-                .configure()
-                .build();
-        try {
-            sessionFactory = new MetadataSources(registry).addAnnotatedClass(Leader.class).buildMetadata().buildSessionFactory();
-        } catch (Exception e) {
-            // The registry would be destroyed by the SessionFactory, but we had trouble building the SessionFactory
-            // so destroy it manually.
-            StandardServiceRegistryBuilder.destroy(registry);
-        }
-
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-
-        session.save(new Leader("Our planet is add", new Leader()));
-        session.getTransaction().commit();
-        session.close();
-
-        session = sessionFactory.openSession();
-        session.beginTransaction();
-        List result = session.createQuery("from Leader").list();
-        for (Planet planet : (List<Planet>) result) {
-            System.out.println("Event (" + planet.getPlanetName() + ") : " + planet.getCommandLeaderName());
-        }
-        session.getTransaction().commit();
-        session.close();
-
-        if (sessionFactory != null) {
-            sessionFactory.close();
-        }
     }
-    }
-
 }

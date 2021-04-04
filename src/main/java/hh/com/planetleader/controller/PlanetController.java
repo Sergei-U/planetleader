@@ -21,10 +21,18 @@ public class PlanetController {
 
 
     @RequestMapping(value = "/addplanet", method = RequestMethod.POST)
-    public void addPlanet(@RequestBody Planet planet) {this.planetService.addPlanet(planet);}
+    public void addPlanet(@RequestBody Planet planet) {
+        this.planetService.addPlanet(planet);
+    }
+
     @RequestMapping(value = "deleteplanet", method = RequestMethod.POST)
-    public void deletePlanet(@RequestBody Planet planet) {this.planetService.deletePlanet(planet);}
+    public void deletePlanet(@RequestBody Planet planet) {
+        this.planetService.deletePlanet(planet);
+    }
+
     @RequestMapping(value = "editlanet", method = RequestMethod.POST)
-    public void editPlanet(@RequestBody Planet planet) {this.planetService.editPlanet(planet);}
+    public void editPlanet(@RequestBody Planet planet) {
+        this.planetService.editPlanet(planet);
+    }
 
 }

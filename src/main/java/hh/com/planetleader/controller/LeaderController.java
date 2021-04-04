@@ -17,15 +17,29 @@ import org.springframework.web.bind.annotation.RestController;
 public class LeaderController {
 
     private final LeaderService leaderService;
+
     @RequestMapping(value = "/addleader", method = RequestMethod.POST)
-    public void addLeader(@RequestBody Leader leader) {this.leaderService.addLeader(leader);}
+    public void addLeader(@RequestBody Leader leader) {
+        this.leaderService.addLeader(leader);
+    }
+
     @RequestMapping(value = "/deleteleader", method = RequestMethod.POST)
-    public void deleteLeader(@RequestBody Leader leader) {this.leaderService.deleteLeader(leader);}
+    public void deleteLeader(@RequestBody Leader leader) {
+        this.leaderService.deleteLeader(leader);
+    }
+
     @RequestMapping(value = "/editleader", method = RequestMethod.POST)
-    public void editLeader(@RequestBody Leader leader) {this.leaderService.editLeader(leader);}
+    public void editLeader(@RequestBody Leader leader) {
+        this.leaderService.editLeader(leader);
+    }
+
     @RequestMapping(value = "/findleader", method = RequestMethod.POST)
-    public void findLeader(@RequestBody Leader leader) {this.leaderService.findLeaderByName(leader);}
+    public void findLeader(@RequestBody Leader leader) {
+        this.leaderService.findLeaderByName(leader);
+    }
 
     @RequestMapping(value = "/leaderagesort", method = RequestMethod.POST)
-    public void leaderAgeSrot(@RequestBody Leader leader) {this.leaderService.getFirstTenYoungerLeader(leader);}
+    public void leaderAgeSrot(@RequestBody Leader leader) {
+        this.leaderService.getFirstTenYoungerLeader(leader);
+    }
 }

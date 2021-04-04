@@ -4,6 +4,7 @@ package hh.com.planetleader.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+
 /**
  *
  */
