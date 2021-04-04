@@ -21,6 +21,6 @@ public class Planet {
     @Column(name = "PLANETNAME")
     private String planetName;
 
-    @Column(name = "LEADERNAME")
-    private String leaderName;
+    @Column(name = "COMMANDLEADERNAME")
+    private String commandLeaderName;
 }

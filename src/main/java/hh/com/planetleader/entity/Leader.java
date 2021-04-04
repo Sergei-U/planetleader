@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.Comparator;
+import java.util.List;
 
 /**
  *
@@ -24,6 +25,9 @@ public class Leader {
 
     @Column(name = "LEADERAGE")
     private int leaderAge;
+
+    @OneToMany(targetEntity = Planet.class)
+    private List<Planet> planetList;
 
 
 

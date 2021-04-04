@@ -40,9 +40,16 @@ public class LeaderService {
         return leader1;
     }
 
-    public List<Leader> getFirstTenYoungerLeader(Leader a) {
+    public List<Leader> getFirstTenYoungerLeader(Leader leader) {
         List<Leader> leaders = leaderRepository.findAll();
 
         return leaders.stream().limit(10).sorted(new LeaderAgeComparator()).collect(Collectors.toList());
+    }
+
+    public List<Leader> getAllLeaderThatNonCommandPlanet(Leader leader) {
+        List<Leader> leaders = leaderRepository.findAll();
+
+
+        return null;
     }
 }
