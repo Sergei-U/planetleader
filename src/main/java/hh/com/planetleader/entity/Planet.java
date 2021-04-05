@@ -24,4 +24,8 @@ public class Planet {
 
     @Column(name = "COMMANDLEADERNAME")
     private String commandLeaderName;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "name")
+    private Leader leader;
 }

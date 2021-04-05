@@ -1,8 +1,6 @@
 package hh.com.planetleader.service;
 
-import hh.com.planetleader.entity.Leader;
 import hh.com.planetleader.entity.Planet;
-import hh.com.planetleader.repository.LeaderRepository;
 import hh.com.planetleader.repository.PlanetRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

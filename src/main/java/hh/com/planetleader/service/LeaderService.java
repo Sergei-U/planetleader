@@ -48,8 +48,11 @@ public class LeaderService {
 
     public List<Leader> getAllLeaderThatNonCommandPlanet(Leader leader) {
         List<Leader> leaders = leaderRepository.findAll();
-
-
         return null;
+    }
+
+    public List<Leader> getFirstTenYoungerLeaderSQL(Leader leader) {
+        List<Leader> leaders = leaderRepository.findByLeaderAge();
+        return leaders;
     }
 }
