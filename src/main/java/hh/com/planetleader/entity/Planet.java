@@ -19,13 +19,11 @@ public class Planet {
     @Column(name = "ID")
     private long id;
 
-    @Column(name = "PLANETNAME")
+    @Column(name = "PLANET_NAME")
     private String planetName;
 
-    @Column(name = "COMMANDLEADERNAME")
-    private String commandLeaderName;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "name")
+    @Column(name = "LEADER_ID")
+    @JoinColumn(name = "LEADER_ID")
+    @OneToOne(targetEntity = Leader.class)
     private Leader leader;
 }

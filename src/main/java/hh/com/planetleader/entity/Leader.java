@@ -21,14 +21,14 @@ public class Leader {
     @Column(name = "NAME")
     private String name;
 
-    @Column(name = "LASTNAME")
+    @Column(name = "LAST_NAME")
     private String lastName;
 
-    @Column(name = "LEADERAGE")
+    @Column(name = "AGE")
     private int leaderAge;
 
 
-    @OneToMany(mappedBy = "Planet")
+    @OneToMany(mappedBy = "id")
     private List<Planet> planetList;
 
 
