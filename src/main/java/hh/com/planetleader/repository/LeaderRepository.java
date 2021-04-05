@@ -17,6 +17,6 @@ public interface LeaderRepository extends JpaRepository<Leader, Long> {
     Optional<Leader> findByName(String name);
 
 
-    @Query("select first 10 * from Leader order by leaderAge desc ")
-    List<Leader> findByLeaderAge();
+    @Query("select first 10 * from Leader order by age desc")
+    List<Leader> findByAge();
 }

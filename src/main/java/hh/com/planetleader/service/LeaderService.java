@@ -59,7 +59,7 @@ public class LeaderService {
     }
 
     public List<Leader> getFirstTenYoungerLeaderSQL(Leader leader) {
-        List<Leader> leaders = leaderRepository.findByLeaderAge();
+        List<Leader> leaders = leaderRepository.findByAge();
         return leaders;
     }
 }
