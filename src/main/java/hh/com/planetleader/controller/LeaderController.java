@@ -1,7 +1,6 @@
 package hh.com.planetleader.controller;
 
 import hh.com.planetleader.entity.Leader;
-import hh.com.planetleader.repository.LeaderRepository;
 import hh.com.planetleader.service.LeaderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class LeaderController {
 
     private final LeaderService leaderService;
-    private final LeaderRepository leaderRepository;
+
 
     @RequestMapping(value = "/addleader", method = RequestMethod.POST)
     public void addLeader(@RequestBody Leader leader) {
@@ -47,4 +46,7 @@ public class LeaderController {
 
     @RequestMapping(value = "/leaderagesortonbase", method = RequestMethod.POST)
     public void leaderAgeSortInBase(@RequestBody Leader leader) {this.leaderService.getFirstTenYoungerLeaderSQL(leader);}
+
+    @RequestMapping(value = "/getAllLeaderThatNonCommandPlanet", method = RequestMethod.POST)
+    public void leaderNonCommandPlanet(@RequestBody Leader leader) {this.leaderService.getAllLeaderThatNonCommandPlanet(leader);}
 }

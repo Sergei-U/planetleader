@@ -6,7 +6,8 @@ import hh.com.planetleader.repository.LeaderRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 /**
@@ -48,7 +49,13 @@ public class LeaderService {
 
     public List<Leader> getAllLeaderThatNonCommandPlanet(Leader leader) {
         List<Leader> leaders = leaderRepository.findAll();
-        return null;
+
+        return (List<Leader>) Collectors.collectingAndThen(
+                Collectors.joining(" AND "),
+                str->{
+                    if(str.isEmpty()) return null;
+                    return "(" + str + ")";
+                });
     }
 
     public List<Leader> getFirstTenYoungerLeaderSQL(Leader leader) {
